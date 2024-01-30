@@ -1,0 +1,22 @@
+.title {
+  font-weight: bold;
+}
+
+.values {
+  margin-top: 20px;
+  background: rgb(243, 243, 232);
+}
+
+.value {
+  margin-top: 10px;
+  border-top: 1px dashed rgb(116, 112, 112);
+}
+
+.form {
+  margin-top: 20px;
+}
+
+.main {
+  padding: 10px;
+  background: #ccc;
+}
