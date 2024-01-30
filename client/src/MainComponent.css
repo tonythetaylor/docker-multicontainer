@@ -1,5 +1,6 @@
 .title {
   font-weight: bold;
+  color: #332f2f
 }
 
 .values {
@@ -10,7 +11,7 @@
 .value {
   margin-top: 10px;
   border-top: 1px solid rgb(116, 112, 112);
-  color: #fff
+  color: #332f2f
 }
 
 .form {
@@ -20,10 +21,11 @@
   align-items: center;
   gap: 1rem;
   justify-content: space-between;
+  color: #332f2f
 }
 
 .main {
   padding: 10px;
-  background: #333274b7;
-  color: #fff;
+  /* background: #333274b7; */
+  color: #332f2f;
 }
