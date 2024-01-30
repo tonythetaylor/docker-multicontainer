@@ -15,11 +15,13 @@ const NavBar = () => {
       <header>
         <nav className="navbar">
           <div className="container">
-            <div>
-              <Link className="logo" to="/">
-                Simple App
-              </Link>
-            </div>
+            <Link className="logo" to="/">
+              <img
+                className="navbar-logo"
+                src="/assets/images/logo512.png"
+                alt="logo"
+              />
+            </Link>
             <div className="menu-icon" onClick={handleShowNavbar}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

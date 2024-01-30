@@ -10,10 +10,8 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        {/* <div className="main"> */}
         <Route path="/" element={<MainComponent />} />
         <Route path="/otherpage" element={<OtherPage />} />
-        {/* </div> */}
       </Routes>
     </>
   );

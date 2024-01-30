@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const OtherPage = () => {
   return (
-    <div>
+    <div  style={{padding: 20}}>
       I'm an other page!
       <br />
       <br />
