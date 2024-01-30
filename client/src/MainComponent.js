@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { useCallback, useState, useEffect } from "react";
 import axios from "axios";
 import "./MainComponent.css";
@@ -10,15 +10,15 @@ const MainComponent = () => {
   const getAllNumbers = useCallback(async () => {
     // we will use nginx to redirect it to the proper URL
     const data = await axios.get("/api/values/all");
-    setValues(data.data.rows.map(row => row.number));
+    setValues(data.data.rows.map((row) => row.number));
   }, []);
 
   const saveNumber = useCallback(
-    async event => {
+    async (event) => {
       event.preventDefault();
 
       await axios.post("/api/values", {
-        value
+        value,
       });
 
       setValue("");
@@ -33,25 +33,34 @@ const MainComponent = () => {
 
   return (
     <div className="main">
-      <button onClick={getAllNumbers}>Get all numbers</button>
-      <br />
-      <span className="title">Values</span>
-      <div className="values">
-        {values.map((value, idx) => (
-          <div className="value" key={idx}>{value}</div>
-        ))}
-      </div>
       <form className="form" onSubmit={saveNumber}>
-        <label>Enter your value: </label>
+        <div>
+          <label>Enter your value: </label>
+        </div>
+
         <input
-        type='number'
+          type="number"
           value={value}
-          onChange={event => {
+          onChange={(event) => {
             setValue(event.target.value);
           }}
         />
         <button>Submit</button>
       </form>
+
+      <div>
+        <button onClick={getAllNumbers}>Get all numbers</button>
+        <br />
+      </div>
+
+      <span className="title">Values</span>
+      <div className="values">
+        {values.map((value, idx) => (
+          <div className="value" key={idx}>
+            {value}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
