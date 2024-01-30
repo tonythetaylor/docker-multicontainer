@@ -5,6 +5,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+const PORT = process.env.PORT || 5000;
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -46,6 +48,6 @@ app.post("/values", async (req, res) => {
   res.send({ working: true });
 });
 
-app.listen(5000, err => {
-  console.log("Listening");
+app.listen(PORT, err => {
+  console.log(`'listening on port ${PORT}!'`);
 });
