@@ -44,6 +44,7 @@ const MainComponent = () => {
       <form className="form" onSubmit={saveNumber}>
         <label>Enter your value: </label>
         <input
+        type='number'
           value={value}
           onChange={event => {
             setValue(event.target.value);
