@@ -1,11 +1,13 @@
 # Multicontainer application
 
-Dockerizing a React application with Node.js Postgres and NginX - dev and prod
+Dockerize a React application with Node.js Postgres and Nginx - dev and prod
 
+This project contains a React client, Node.js backend, PostgreSQL database and Nginx web server.
 
-It contains React client, Node.js backend, PostgreSQL and Nginx
-
-You can run it in development mode: docker-compose up --build
+You can spin up the project in development mode: 
+```
+docker-compose up --build
+```
 
 Once all of the resources are up, you can access the client in the browser by visiting http://localhost:3050/.
 
