@@ -9,7 +9,7 @@ a {
 
 .wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   flex-wrap: wrap;
   margin: 0 auto;
   flex-direction: row;
@@ -21,7 +21,7 @@ a {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
   /* flex: 1 1 0; */
 }
 
@@ -116,6 +116,9 @@ a {
     flex-wrap: wrap;
     gap: 10px;
   }
+  .wrapper {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 600px) {
@@ -124,5 +127,8 @@ a {
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+  }
+  .wrapper {
+    justify-content: center;
   }
 }

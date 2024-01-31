@@ -56,18 +56,18 @@ const MainComponent = () => {
       </form>
 
       <div className="wrapper flex">
+      <div>
+            <button onClick={getAllNumbers}>Get all numbers</button>
+            <br />
+          </div>
       <div className="content"> 
       {values.map((value, idx) => (
         
         <div className="box" key={idx}>
-          <div>
-            <button onClick={getAllNumbers}>Get all numbers</button>
-            <br />
-          </div>
+      
 
           <span className="title">Values</span>
           <div className="values">
-            {values.map((value, idx) => (
               <div className="value" key={idx}>
                 <Link
                   to={{
@@ -78,7 +78,6 @@ const MainComponent = () => {
                   {value}
                 </Link>
               </div>
-            ))}
           </div>
         </div>
         
