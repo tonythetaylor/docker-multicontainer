@@ -29,7 +29,7 @@ pgClient.on("connect", client => {
 
 //Express route definitions
 app.get("/", (req, res) => {
-  res.send("Hi");
+  res.send("Welcome to this Simple App!");
 });
 
 // get the values
@@ -37,6 +37,17 @@ app.get("/values/all", async (req, res) => {
   const values = await pgClient.query("SELECT * FROM values");
 
   res.send(values);
+});
+
+// get the value byId
+app.get("/values/:id", async (req, res) => {
+  const  { id }  = req.params
+  pgClient.query('SELECT * FROM values WHERE number = $1', [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).json(results.rows)
+  })
 });
 
 // now the post -> insert value
