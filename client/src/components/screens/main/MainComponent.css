@@ -118,7 +118,7 @@ a {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 10px;
-    flex-direction: row;
+    flex-direction: column;
   }
   .wrapper {
     display: flex;
@@ -138,7 +138,7 @@ a {
   .wrapper {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 
@@ -152,7 +152,7 @@ a {
   .wrapper {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 
@@ -166,6 +166,6 @@ a {
   .wrapper {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
   }
 }
