@@ -93,9 +93,9 @@ const MainComponent = () => {
                 <div className="value" key={idx}>
                   <Link
                     to={{
-                      pathname: `/details/${value.number}`,
+                      pathname: `/details/${value.id}`,
                     }}
-                    state={{ id: value.number }}
+                    state={{ id: value.id }}
                   >
                     {value.number}
                   </Link>
