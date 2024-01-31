@@ -22,10 +22,17 @@ const pgClient = new Pool({
 });
 
 pgClient.on("connect", client => {
+  client.query("CREATE SEQUENCE IF NOT EXISTS user_id_seq;");
   client
-    .query("CREATE TABLE IF NOT EXISTS values (number INT)")
+    .query("CREATE TABLE IF NOT EXISTS values (id INT NOT NULL DEFAULT NEXTVAL('user_id_seq'), number INT, username VARCHAR(45));")
     .catch(err => console.log("PG ERROR", err));
 });
+
+// pgClient.on("connect", client => {
+//   client
+//     .query("CREATE TABLE IF NOT EXISTS values (number INT)")
+//     .catch(err => console.log("PG ERROR", err));
+// });
 
 //Express route definitions
 app.get("/", (req, res) => {
@@ -41,8 +48,9 @@ app.get("/values/all", async (req, res) => {
 
 // get the value byId
 app.get("/values/:id", async (req, res) => {
+  // console.log(`\x1b[33m DEBUG : ---> ${req.params.id} \x1b[0m`)
   const  { id }  = req.params
-  pgClient.query('SELECT * FROM values WHERE number = $1', [id], (error, results) => {
+  pgClient.query('SELECT * FROM values WHERE id = $1', [id], (error, results) => {
     if (error) {
       throw error
     }
@@ -53,8 +61,7 @@ app.get("/values/:id", async (req, res) => {
 // now the post -> insert value
 app.post("/values", async (req, res) => {
   if (!req.body.value) res.send({ working: false });
-
-  pgClient.query("INSERT INTO values(number) VALUES($1)", [req.body.value]);
+  pgClient.query("INSERT INTO values(number, username) VALUES($1, $2)", [req.body.value, req.body.username]);
 
   res.send({ working: true });
 });

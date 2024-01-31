@@ -10,8 +10,8 @@ const Details = () => {
   const getNumberById = useCallback(async (id) => {
     // we will use nginx to redirect it to the proper URL
     const dataByIdResponse = await axios.get(`/api/values/${id}`);
-    // console.log(`DEBUG line: 13 : ${data.data.map((row) => row.number)}`);
-    setData(dataByIdResponse.data.map((row) => row.number));
+    setData(dataByIdResponse.data.map((row) => row));
+      // console.log(`\x1b[33m DEBUG : ---> ${data.map((value) => value.username)} \x1b[0m`)
   }, []);
 
   useEffect(() => {
@@ -20,12 +20,15 @@ const Details = () => {
 
   return (
     <>
-      <div className="header-title">
-        <h1>
-          Details: <span>{data}</span>
-        </h1>
-        <div>Other details</div>
-      </div>
+      {data && data.map((value, idx) => (
+        <div className="header-title" key={idx}>
+          <h1>
+            Details: <span>{value.username}</span>
+          </h1>
+          <div>Other details</div>
+          {value.number}
+        </div>
+      ))}
     </>
   );
 };
