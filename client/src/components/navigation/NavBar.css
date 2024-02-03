@@ -47,7 +47,8 @@
 }
 
 .nav-elements ul li:not(:last-child) {
-  margin-right: 60px;
+  display: inline;
+  margin-right: 20px
 }
 
 .nav-elements ul a {
@@ -71,6 +72,10 @@
   width: 100%;
   height: 2px;
   background-color: #ffffff;
+}
+
+.login {
+  color: white;
 }
 
 @media (max-width: 768px) {
